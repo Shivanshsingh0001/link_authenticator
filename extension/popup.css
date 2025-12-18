@@ -1,0 +1,174 @@
+/* Modern Cyber Ops Theme */
+:root {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --accent-safe: #00ff41;
+  --accent-danger: #ff3333;
+  --accent-neutral: #00ccff;
+  --panel-bg: #252525;
+  --border-color: #333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 350px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto Mono', monospace; /* Monospace for that hacker feel */
+  font-size: 12px;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+h1 {
+  font-size: 16px;
+  margin: 0;
+  color: var(--accent-neutral);
+  letter-spacing: 1px;
+}
+
+.status-indicator {
+  font-size: 10px;
+  color: var(--accent-safe);
+  animation: pulse 2s infinite;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  color: var(--accent-safe);
+  padding: 8px;
+  font-family: inherit;
+  outline: none;
+}
+
+input[type="text"]::placeholder {
+  color: #555;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent-neutral);
+}
+
+button {
+  background: var(--border-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: var(--accent-safe);
+  color: var(--bg-color);
+  border-color: var(--accent-safe);
+}
+
+.hidden {
+  display: none;
+}
+
+.verdict-box {
+  text-align: center;
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.verdict-safe {
+  border-color: var(--accent-safe);
+  color: var(--accent-safe);
+  background: rgba(0, 255, 65, 0.1);
+}
+
+.verdict-danger {
+  border-color: var(--accent-danger);
+  color: var(--accent-danger);
+  background: rgba(255, 51, 51, 0.1);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  border-bottom: 1px dotted #333;
+  padding-bottom: 4px;
+}
+
+.label {
+  color: #888;
+}
+
+.value {
+  color: var(--text-color);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.advanced-toggle {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.advanced-toggle label {
+  cursor: pointer;
+  color: var(--accent-neutral);
+}
+
+.advanced-toggle input {
+  display: none;
+}
+
+#advancedDetails {
+  margin-top: 10px;
+  background: var(--panel-bg);
+  padding: 10px;
+  border: 1px solid var(--border-color);
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.loader {
+    text-align: center;
+    color: var(--accent-neutral);
+    animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}

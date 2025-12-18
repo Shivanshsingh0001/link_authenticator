@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Forensics</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>LINK FORENSICS</h1>
+      <div class="status-indicator">SYSTEM ONLINE</div>
+    </header>
+
+    <div class="input-section">
+      <input type="text" id="urlInput" placeholder="PASTE LNK HERE >>" autocomplete="off">
+      <button id="scanBtn">SCAN TARGET</button>
+    </div>
+
+    <div id="resultsArea" class="hidden">
+      <div class="verdict-box" id="verdictBox">
+        <span id="verdictText">ANALYZING...</span>
+      </div>
+      
+      <div class="info-row">
+        <span class="label">DESTINATION:</span>
+        <div class="value" id="finalUrl">---</div>
+      </div>
+
+      <div class="advanced-toggle">
+        <label for="advancedCheck">
+          <input type="checkbox" id="advancedCheck">
+          [+] ADVANCED INTEL
+        </label>
+      </div>
+
+      <div id="advancedDetails" class="hidden">
+        <div class="info-row">
+          <span class="label">SERVER LOC:</span>
+          <span class="value" id="serverLoc">---</span>
+        </div>
+        <div class="info-row">
+          <span class="label">DOMAIN AGE:</span>
+          <span class="value" id="domainAge">---</span>
+        </div>
+        <div class="info-row">
+          <span class="label">VENDOR RATIO:</span>
+          <span class="value" id="scanRatio">---</span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="loading" class="hidden">
+        <div class="loader">NOISE FILTERING...</div>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
