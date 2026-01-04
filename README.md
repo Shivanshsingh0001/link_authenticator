@@ -1,46 +1,155 @@
-# 🛡️ Link Forensics & Threat Intelligence
+# 🔐 Link Authenticator – Chrome Extension
 
-Detect phishing, malware, and scam links before you click. This browser extension provides real-time URL scanning and threat intelligence to keep your browsing safe.
+Link Authenticator is a **Chrome extension** that allows users to verify whether a URL is **safe, suspicious, or malicious** before interacting with it.
 
-## ✨ Features
+It supports both **manual scanning** and **one-click scanning directly from the right-click menu**, making link verification fast and frictionless.
 
-- **Real-time Scanning**: Scan any URL manually via the extension popup.
-- **Context Menu Integration**: Right-click any link on a web page to "Scan this link for threats".
-- **Advanced Intel**: View destination URLs, server locations, domain age, and vendor scan ratios.
-- **Threat Verdicts**: Clear "SECURE" or "THREAT DETECTED" indicators based on VirusTotal intelligence.
-- **URL Unrolling**: Automatically follows redirects to find the final destination of a shortened link.
+---
 
-## 🚀 Getting Started
+## 🚀 Features
 
-### 1. Prerequisites
-- **Google Chrome** (or any Chromium-based browser).
+* Scan any URL before opening it
+* **Right-click on any link → Scan for threats**
+* Clear safety verdict (SAFE / MALICIOUS)
+* Lightweight and fast
+* No user configuration required
+* No sensitive data stored in the browser
 
-### 2. Backend Setup
-The backend handles the actual scanning logic and communicates with Threat Intelligence APIs.
+---
 
-### 3. Extension Installation
-1. Open Chrome and go to `chrome://extensions/`.
-2. Enable **Developer mode** (top right toggle).
-3. Click **Load unpacked**.
-4. Select the `extension` folder from this repository.
+## ⚙️ Technologies Used
 
-## 🛠️ Architecture
+### Frontend (Chrome Extension)
 
-The project is split into two main components:
+* **JavaScript (ES6)**
+* **HTML5**
+* **CSS3**
+* **Chrome Extensions API (Manifest v3)**
+* **Chrome Context Menus API**
 
-- **Frontend (Extension)**:
-  - `popup.html/js`: The user interface for manual scans.
-  - `background.js`: A service worker that handles network requests and context menu actions.
-  - `manifest.json`: Configuration and permissions (V3).
-- **Backend (Server)**:
-  - `app.py`: A Flask server that performs URL unrolling and queries VirusTotal.
-  - `requirements.txt`: Python dependencies.
+### Backend (Pre-deployed)
 
-## 🔒 Permissions Used
-- `contextMenus`: To add the right-click scan option.
-- `activeTab`: To access the link URL from the current page.
-- `scripting`: To show alert notifications on the web page.
-- `host_permissions`: Specifically `http://127.0.0.1:5000/*` to communicate with your local backend.
+* **Python**
+* **Flask**
+* **Gunicorn**
+* **Docker**
+* **Google Cloud Run**
+* **VirusTotal API** (Threat Intelligence)
 
-## 📄 License
-This project is open-source and available under the MIT License.
+> Backend services are already deployed and managed by the team.
+> Users do **not** need to configure or run any backend components.
+
+---
+
+## 🤖 AI-Assisted Development Tools
+
+Modern AI tools were used to accelerate development and improve code quality:
+
+* **Google Gemini** – backend logic design, API structuring, debugging support
+* **AntiGravity** – frontend flow optimization and interaction refinement
+
+These tools were used strictly as **development assistants**, with all architectural and integration decisions made by the team.
+
+---
+
+## ⚡ Quick Setup (Chrome)
+
+> **No backend setup required.**
+
+### 1️⃣ Download the Extension Code
+
+```bash
+git clone https://github.com/Shivanshsingh0001/link_authenticator
+```
+
+Or download and extract the ZIP.
+
+---
+
+### 2️⃣ Open Chrome Extensions Page
+
+Navigate to:
+
+```
+chrome://extensions/
+```
+
+Enable **Developer mode** (top-right).
+
+---
+
+### 3️⃣ Load the Extension
+
+1. Click **Load unpacked**
+2. Select the `extension/` folder
+3. The extension will appear in the extensions list
+
+⚠️ Selecting the wrong folder will cause loading to fail.
+
+---
+
+### 4️⃣ Pin the Extension (Optional)
+
+* Click the puzzle icon (🧩)
+* Pin **Link Authenticator** for quick access
+
+---
+
+## 🧪 Using the Extension
+
+### Option 1: Scan via Extension Popup
+
+1. Click the **Link Authenticator** icon
+2. Paste a URL or scan the current tab
+3. Click **Check Link**
+4. View the verdict instantly
+
+### Option 2: Scan via Right-Click (Recommended)
+
+1. Right-click on any link on a webpage
+2. Select **“Scan this link for threats”**
+3. The scan result is fetched and displayed immediately
+
+This allows users to verify links **before clicking them**, reducing phishing and malware risk.
+
+---
+
+## 🖼️ Screenshots
+
+### Extension Popup
+
+![Extension Popup](screenshots/popup.png)
+
+### Right-Click Context Menu
+
+![Context Menu](screenshots/context_menu.png)
+
+### Safe Link Result
+
+![Safe Result1](screenshots/safe_result1.png)
+![Safe Result2](screenshots/safe_result2.png)
+### Malicious Link Warning
+
+![Malicious Result1](screenshots/malicious_result1.png)
+![Malicious Result2](screenshots/malicious_result2.png)
+
+---
+
+## 🧠 How It Works (Brief)
+
+1. User submits a URL (popup or right-click)
+2. The extension sends the URL to a secure backend API
+3. Threat intelligence analysis is performed
+4. A consolidated safety verdict is returned
+5. The result is displayed in the browser UI
+
+No API keys or sensitive credentials are exposed to the client.
+
+---
+
+## 🏁 Summary
+
+Link Authenticator provides a **practical, real-world solution** for preventing phishing and malicious link attacks by enabling users to scan links **before they click them**.
+
+---
+
