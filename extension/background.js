@@ -1,7 +1,7 @@
 // Function to perform the scan
 async function performUrlScan(url) {
     try {
-        const response = await fetch('http://127.0.0.1:5000/scan', {
+        const response = await fetch('https://link-auth-api-289522255962.us-central1.run.app/scan', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
